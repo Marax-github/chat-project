@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'chat';
+
+  messages: string[] = [];
+  enterMessage!: string;
+
+  addNewMessage(){
+
+    this.enterMessage.trim() && this.messages.push(this.enterMessage.trim());
+
+  }
+ 
+
 }
+
